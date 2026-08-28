@@ -5,15 +5,16 @@
     <button id="verify"></button>
   </body>
   <script>
-    import {sha256} from "/main.js"
+    import {sha256} from "/hash.js"
 
     const inputField = document.getElementById("input")
     const verifyButton = document.getElementById("verify")
     
-    function verifyButtonOnclick() {
-      if (sha256(inputField.value) == hashv) {
+    async function verifyButtonOnclick() {
+      if (await sha256(inputField.value) == hashv) {
         alert("You found it!")
       }
     }
+    verifyButton.addEventListener("click", verifyButtonOnclick)
   </script>
 </html>
