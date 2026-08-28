@@ -11,7 +11,7 @@
     const verifyButton = document.getElementById("verify")
     
     async function verifyButtonOnclick() {
-      if (await sha256(inputField.value) == hashv) {
+      if (await sha256(inputField.value) == "0") {
         alert("You found it!")
       }
     }
