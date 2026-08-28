@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <input id="input" placeholder="Enter password here"></input>
+    <button id="verify"></button>
+  </body>
+  <script>
+    import {sha256} from "/main.js"
+
+    const inputField = document.getElementById("input")
+    const verifyButton = document.getElementById("verify")
+    
+    function verifyButtonOnclick() {
+      if (sha256(inputField.value) == hashv) {
+        alert("You found it!")
+      }
+    }
+  </script>
+</html>
