@@ -10,7 +10,7 @@
     const inputField = document.getElementById("input")
     const verifyButton = document.getElementById("verify")
     
-    async function verifyButtonOnclick() {
+    async function verifyButtonOnclick(event) {
       if (await sha256(inputField.value + "salted") == "980abfc8fb55f28a5667ac9a47d8bd1e6090af21059454607fb89eddc29613c1") {
         alert("You found it!")
       }
