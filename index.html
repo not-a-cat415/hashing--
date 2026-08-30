@@ -1,41 +1,23 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Hash Cracker Tester</title>
-    <style>
-      body {
-        background-color: orange;
-      }
-    </style>
-  </head>
-  <body>
-    <input id="input" placeholder="Enter password here"></input>
-    <button id="verify">Verify</button>
-  </body>
-  <script type="module">
-    async function sha256(message) {
-      const msgBuffer = new TextEncoder().encode(message);                    
-
-      const hashBuffer = await crypto.subtle.digest('SHA-256', msgBuffer);
-
-      const hashArray = Array.from(new Uint8Array(hashBuffer));
-
-      const hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
-      
-      return hashHex;
-      }
-
-    const inputField = document.getElementById("input")
-    const verifyButton = document.getElementById("verify")
-    
-    async function verifyButtonOnclick(event) {
-      if (await sha256(inputField.value + "salted") == "e213f8c5fa6331b878e98d6d5db2d873d3964d7f2879a2843eb154c7c8ac14e5") {
-        alert("You found it!")
-      }
-      else if (await sha256(inputField.value + "salted") == "575bfed27a7431f1c2435295f4dd1c16299118d60d96a53a5d14451817501f38") {
-        alert("TOO MUCH")
-      }
-    }
-    verifyButton.addEventListener("click", verifyButtonOnclick)
-  </script>
+<html lang = "en">
+    <head>
+        <title>Side projects</title>
+        <style>
+            body {
+                background-color: orange;
+            }
+            p {
+                font-size: 30;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>
+            Side projects
+        </h1>
+        <a href = "/side-projects/hashing">
+            <p>Hashing</p>
+        </a>
+    </body>
 </html>
+
