@@ -24,7 +24,7 @@
     const verifyButton = document.getElementById("verify")
     
     async function verifyButtonOnclick(event) {
-      if (await sha256(inputField.value + "salted") == "980abfc8fb55f28a5667ac9a47d8bd1e6090af21059454607fb89eddc29613c1") {
+      if (await sha256(inputField.value + "salted") == "e213f8c5fa6331b878e98d6d5db2d873d3964d7f2879a2843eb154c7c8ac14e5") {
         alert("You found it!")
       }
       else if (await sha256(inputField.value + "salted") == "575bfed27a7431f1c2435295f4dd1c16299118d60d96a53a5d14451817501f38") {
